@@ -1,4 +1,4 @@
-mongooseCONNECT = (mongoose, db) => {
+const mongooseCONNECT = (mongoose, db) => {
     mongoose
         .connect(db, {
             useNewUrlParser: true,

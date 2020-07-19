@@ -1,0 +1,33 @@
+:root {
+    --main-color: #9C27B0;
+    --main-color-light: #C671D5;
+    --main-color-dark: #6A037C;
+    --second-color: #11B8CC;
+    --second-color-light: #60CDDD;
+    --second-color-dark: #017180;
+    --fatna: #F8C9C8;
+    --angelique: #0B2E4E;
+    --kelly: #01B1AE;
+
+    --status-green: #5EB562;
+    --status-orange: #FC9309;
+    --status-red: #E8403D;
+
+    --light-grey: #F9F9F9;
+    --grey: #EEEEEE;
+    --dark-grey: #757575;
+    --text-grey: #424242;
+
+    --main-font: 'Montserrat', sans-serif;
+    --light-shadow: rgba(0, 0, 0, 0.15);
+}
+
+html {
+    font-family: var(--main-font);
+    background-color: var(--light-grey);
+    color: var(--text-grey);
+}
+
+a:visited, a:focus, a:active {
+    color: inherit;
+}
