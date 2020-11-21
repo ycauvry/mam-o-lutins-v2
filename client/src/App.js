@@ -1,8 +1,9 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import MainMenu from "./components/navigation/MainMenu";
-import Calendar from "./components/Calendar";
-import Listing from "./components/Listing";
+import Calendar from "./components/calendar/Calendar";
+import Listing from "./components/listing/Listing";
+import {ListingProvider} from "./context/ListingContext";
 
 function App() {
     return (
@@ -14,13 +15,19 @@ function App() {
                         <Calendar/>
                     </Route>
                     <Route path="/gestion-assistantes">
-                        <Listing/>
+                        <ListingProvider>
+                            <Listing type={'assistant'}/>
+                        </ListingProvider>
                     </Route>
                     <Route path="/gestion-enfants">
-                        <Listing/>
+                        <ListingProvider>
+                            <Listing type={'child'}/>
+                        </ListingProvider>
                     </Route>
                     <Route path="/gestion-contrats">
-                        <Listing/>
+                        <ListingProvider>
+                            <Listing type={'contract'}/>
+                        </ListingProvider>
                     </Route>
                 </Switch>
             </div>

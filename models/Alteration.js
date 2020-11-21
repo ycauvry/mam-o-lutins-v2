@@ -2,8 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const AlterationSchema = new Schema({
-    contract_id: {
+    contract: {
         type: mongoose.Schema.Types.ObjectId,
+        ref: 'contract',
         required: true
     },
     start: {

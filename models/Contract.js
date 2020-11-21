@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ContractSchema = new Schema({
-    child_id: {
+    child: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Child',
+        ref: 'child',
     },
-    assistant_id: {
+    assistant: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Assistant'
+        ref: 'assistant'
     },
     start: {
         type: Date,

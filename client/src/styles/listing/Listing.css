@@ -1,0 +1,30 @@
+.listing-title {
+    width: max-content;
+    padding: 10px 20px;
+    margin: 0 0 40px 0;
+    background-color: var(--main-color);
+    color: #FFFFFF;
+    border-radius: 3px;
+}
+
+.table-content {
+    padding: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px var(--light-shadow);
+    border-radius: 3px;
+}
+
+.listing-table {
+    width: 100%;
+}
+
+.listing-table thead {
+    background-color: var(--dark-grey);
+    color: #FFFFFF;
+}
+
+.listing-table thead th {
+    padding: 10px 0;
+    text-align: center;
+    font-weight: 400;
+}

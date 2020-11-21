@@ -28,6 +28,10 @@ html {
     color: var(--text-grey);
 }
 
+.App {
+    padding: 20px;
+}
+
 a:visited, a:focus, a:active {
     color: inherit;
 }

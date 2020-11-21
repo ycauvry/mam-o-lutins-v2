@@ -7,13 +7,16 @@ const Alteration = require('../../models/Alteration');
 // @route GET api/alteration
 // @desc Get all alterations
 router.get('/', (req, res) => {
-    Alteration.find().then(alterations => res.json(alterations))
+    Alteration.find()
+        .populate('contract')
+        .then(alterations => res.json(alterations))
 })
 
 // @route GET api/alteration/:id
 // @desc Get an alteration
 router.get('/:id', (req, res) => {
     Alteration.findById(req.params.id)
+        .populate('contract')
         .then(alteration => res.json(alteration))
         .catch(err => res.status(404).json({success: false, err}))
 })

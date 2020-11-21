@@ -7,19 +7,22 @@ const Contract = require('../../models/Contract');
 // @route GET api/contract
 // @desc Get all contracts
 router.get('/', (req, res) => {
-    Contract.find().then(contracts => res.json(contracts))
+    Contract.find()
+        .populate('child assistant')
+        .then(contracts => res.json(contracts));
 })
 
 // @route GET api/contract/:id
-// @desc Get an contract
+// @desc Get a contract
 router.get('/:id', (req, res) => {
     Contract.findById(req.params.id)
+        .populate('child assistant')
         .then(contract => res.json(contract))
         .catch(err => res.status(404).json({success: false, err}))
 })
 
 // @route POST api/contract
-// @desc Create an contract
+// @desc Create a contract
 router.post('/', (req, res) => {
     const newContract = new Contract(req.body)
 
@@ -29,7 +32,7 @@ router.post('/', (req, res) => {
 })
 
 // @route PUT api/contract
-// @desc Update an contract
+// @desc Update a contract
 router.put('/:id', (req, res) => {
     const id = req.param.id;
     const update = req.body;
@@ -39,7 +42,7 @@ router.put('/:id', (req, res) => {
 })
 
 // @route DELETE api/contract/:id
-// @desc Delete an contract
+// @desc Delete a contract
 router.delete('/:id', (req, res) => {
     Contract.findById(req.params.id)
         .then(contract => contract.remove().then(() => res.json({success: true})))

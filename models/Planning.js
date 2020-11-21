@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const PlanningSchema = new Schema({
-    assistant_id: {
+    assistant: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Assistant',
+        ref: 'assistant',
         required: true
     },
     start: {

@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 })
 
 // @route GET api/planning/:id
-// @desc Get an planning
+// @desc Get a planning
 router.get('/:id', (req, res) => {
     Planning.findById(req.params.id)
         .then(planning => res.json(planning))
@@ -19,7 +19,7 @@ router.get('/:id', (req, res) => {
 })
 
 // @route POST api/planning
-// @desc Create an planning
+// @desc Create a planning
 router.post('/', (req, res) => {
     const newPlanning = new Planning(req.body)
 
@@ -29,7 +29,7 @@ router.post('/', (req, res) => {
 })
 
 // @route PUT api/planning
-// @desc Update an planning
+// @desc Update a planning
 router.put('/:id', (req, res) => {
     const id = req.param.id;
     const update = req.body;
@@ -39,7 +39,7 @@ router.put('/:id', (req, res) => {
 })
 
 // @route DELETE api/planning/:id
-// @desc Delete an planning
+// @desc Delete a planning
 router.delete('/:id', (req, res) => {
     Planning.findById(req.params.id)
         .then(planning => planning.remove().then(() => res.json({success: true})))
