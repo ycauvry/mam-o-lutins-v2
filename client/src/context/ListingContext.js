@@ -1,8 +1,7 @@
 import React, {createContext, useReducer} from "react";
 import {ListingReducer} from "./ListingReducer";
 import {listObjects} from "../utils/Api";
-import {GET_LISTING_DATA, SET_LISTING_TYPE} from "../actions/listingActions";
-import {ListingDef} from "../utils/ListingDefinitions";
+import {GET_LISTING_DATA, SET_LOADING} from "../actions/listingActions";
 
 const initialState = {
     listingType: '',
@@ -15,29 +14,26 @@ export const ListingContext = createContext(initialState);
 export const ListingProvider = ({children}) => {
     const [state, dispatch] = useReducer(ListingReducer, initialState);
 
-    const setListingType = (type) => {
+    const setLoading = () => {
          dispatch({
-            type: SET_LISTING_TYPE,
-            payload: type
+            type: SET_LOADING
         })
     }
 
     const getListingData = async (listingType) => {
-        if (ListingDef.hasOwnProperty(listingType)) {
-            try {
-                const data = await listObjects(listingType);
-                dispatch({
-                    type: GET_LISTING_DATA,
-                    payload: data
-                })
-            } catch (err) {
+        try {
+            const data = await listObjects(listingType);
+             dispatch({
+                type: GET_LISTING_DATA,
+                payload: {data, listingType}
+            })
+        } catch (err) {
 
-            }
         }
     }
 
     const contextValue = {
-        setListingType,
+        setLoading,
         getListingData,
         listingType: state.listingType,
         listingData: state.listingData,

@@ -1,18 +1,19 @@
-import {GET_LISTING_DATA, SET_LISTING_TYPE} from "../actions/listingActions";
+import {GET_LISTING_DATA, SET_LOADING} from "../actions/listingActions";
 
 export const ListingReducer = (state, action) => {
     switch (action.type) {
-        case SET_LISTING_TYPE:
+        case SET_LOADING:
             return {
                 ...state,
                 loading: true,
-                listingType: action.payload
+                listingData: []
             }
         case GET_LISTING_DATA:
             return {
                 ...state,
                 loading: false,
-                listingData: action.payload
+                listingType: action.payload.listingType,
+                listingData: action.payload.data
             }
         default:
             return state

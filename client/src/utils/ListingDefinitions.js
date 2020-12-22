@@ -1,57 +1,78 @@
 export const ListingDef = {
     assistant: {
         title: 'assistantes',
-        table_head: {
+        tableHead: {
             lastname: 'Nom',
             firstname: 'Prénom'
         },
-        table_body: {
+        tableBody: {
             lastname: 'lastname',
             firstname: 'firstname'
-        }
+        },
+        editPath: '/gestion-assistantes/'
     },
     contract: {
         title: 'contrats',
-        table_head: {
+        tableHead: {
             lastname: 'Nom',
-            firstname: 'Prénom',
             assistant: 'Assistante',
             start: 'Début de contrat',
             end: 'Fin de contrat',
             holidays: 'Vacances'
         },
-        table_body: {
-            lastname: 'lastname',
-            firstname: 'firstname',
-            assistant: {
-                concatFields: ['firstname', 'lastname']
+        tableBody: {
+            lastname: {
+                method: 'concatFields',
+                methodData: ['firstname', 'lastname'],
+                dataPropertyPath: 'child'
             },
-            start: 'start',
-            end: 'end',
-            holidays: 'holidays'
-        }
+            assistant: {
+                method: 'concatFields',
+                methodData: ['firstname', 'lastname'],
+                dataPropertyPath: 'assistant'
+            },
+            start: {
+                method: 'standardDate',
+                methodData: 'start'
+            },
+            end: {
+                method: 'standardDate',
+                methodData: 'end'
+            },
+            holidays: {
+                method: 'holidays'
+            }
+        },
+        editPath: '/gestion-contrats/'
     },
     child: {
         title: 'enfants',
-        table_head: {
-            lastname: 'Nom',
-            firstname: 'Prénom',
+        tableHead: {
+            child: 'Enfant',
             age: 'Âge',
             contact: 'Contact',
             phone_number: 'Téléphone'
         },
-        table_body: {
-            lastname: 'lastname',
-            firstname: 'firstname',
+        tableBody: {
+            child: {
+                method: 'concatFields',
+                methodData: ['firstname', 'lastname']
+            },
             age: {
-                calcAge: ['birthday']
+                method: 'calcAge',
+                methodData: 'birthday'
             },
             contact: {
-                concatFields: ['firstname', 'lastname']
+                method: 'concatFields',
+                methodData: ['firstname', 'lastname'],
+                dataPropertyPath: 'contact'
             },
             phone_number: {
-                pickFields: ['phone_number']
+                method: 'pickField',
+                methodData: 'phone_number',
+                dataPropertyPath: 'contact'
             }
-        }
+        },
+        editPath: '/gestion-enfants/'
     }
 }

@@ -1,22 +1,11 @@
-import React, {useContext, useEffect} from "react";
+import React from "react";
 import {ListingDef} from "../../utils/ListingDefinitions";
 import ListingTable from "./ListingTable";
 import "../../styles/listing/Listing.css";
-import {ListingContext} from "../../context/ListingContext";
+import {useListing} from "../../hooks/listing/useListing";
 
-const Listing = React.memo(({type}) => {
-    const {loading, setListingType, listingType, getListingData} = useContext(ListingContext);
-
-    useEffect(() => {
-        setListingType(type);
-        //eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [type]);
-
-    useEffect(() => {
-        getListingData(listingType);
-        //eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [listingType]);
-
+const Listing = ({type}) => {
+    const [listingType, loading] = useListing(type);
     if (!loading) {
         return (
             <>
@@ -25,6 +14,7 @@ const Listing = React.memo(({type}) => {
             </>
         )
     }
-})
+    return null;
+}
 
 export default Listing;

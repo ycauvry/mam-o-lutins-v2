@@ -4,12 +4,11 @@ import {ListingContext} from "../../context/ListingContext";
 
 const TableHead = () => {
     const {listingType} = useContext(ListingContext);
+    const headings = Object.values(ListingDef[listingType].tableHead);
     return (
         <thead>
             <tr>
-                {Object.values(ListingDef[listingType].table_head).map((heading, idx) => {
-                    return <th key={`heading-${idx}`}>{heading}</th>
-                })}
+                {headings.map((heading, idx) => <th key={`heading-${idx}`}>{heading}</th>)}
                 <th>Actions</th>
             </tr>
         </thead>
