@@ -1,6 +1,6 @@
 export const ListingDef = {
     assistant: {
-        title: 'assistantes',
+        title: 'Gestion des assistantes',
         tableHead: {
             lastname: 'Nom',
             firstname: 'Prénom'
@@ -9,10 +9,11 @@ export const ListingDef = {
             lastname: 'lastname',
             firstname: 'firstname'
         },
-        editPath: '/gestion-assistantes/'
+        editPath: '/gestion-assistantes/',
+        addBtnLabel: 'Ajouter une assistante'
     },
     contract: {
-        title: 'contrats',
+        title: 'Gestion des contrats',
         tableHead: {
             lastname: 'Nom',
             assistant: 'Assistante',
@@ -43,10 +44,11 @@ export const ListingDef = {
                 method: 'holidays'
             }
         },
-        editPath: '/gestion-contrats/'
+        editPath: '/gestion-contrats/',
+        addBtnLabel: 'Ajouter un contrat'
     },
     child: {
-        title: 'enfants',
+        title: 'Gestion des enfants',
         tableHead: {
             child: 'Enfant',
             age: 'Âge',
@@ -73,6 +75,7 @@ export const ListingDef = {
                 dataPropertyPath: 'contact'
             }
         },
-        editPath: '/gestion-enfants/'
+        editPath: '/gestion-enfants/',
+        addBtnLabel: 'Ajouter un enfant'
     }
 }

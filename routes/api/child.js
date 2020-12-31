@@ -21,22 +21,26 @@ router.get('/:id', (req, res) => {
 // @route POST api/child
 // @desc Create a child
 router.post('/', (req, res) => {
-    const {firstname, lastname, birthday, address, contact} = req.body;
+    const {
+        firstname, lastname, birthday, street_number, street, additional, zip_code, city, contactFirstname,
+        contactLastname, phone_number
+    } = req.body;
+
     const newChild = new Child({
         firstname,
         lastname,
         birthday,
         address: {
-            street_number: address.street_number,
-            street: address.street,
-            additional: address.additional,
-            zip_code: address.zip_code,
-            city: address.city
+            street_number,
+            street,
+            additional,
+            zip_code,
+            city
         },
         contact: {
-            firstname: contact.firstname,
-            lastname: contact.lastname,
-            phone_number: contact.phone_number
+            firstname: contactFirstname,
+            lastname: contactLastname,
+            phone_number
         }
     });
 

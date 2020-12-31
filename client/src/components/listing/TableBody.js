@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import {ListingContext} from "../../context/ListingContext";
 import {ListingDef} from "../../utils/ListingDefinitions";
 import ListingCell from "./ListingCell";
-import ListingAction from "./ListingAction";
+import ListingCellAction from "./ListingCellAction";
 
 const TableBody = () => {
     const {listingData, listingType, loading} = useContext(ListingContext);
@@ -15,9 +15,11 @@ const TableBody = () => {
                 listingData.map(row =>
                     <tr key={row._id}>
                         {
-                            tbodyDef.map((cell, idx) => <ListingCell key={cell + idx} data={row} defRef={cell}/>)
+                            tbodyDef.map((cell, idx) =>
+                                <ListingCell key={cell + idx} data={row} defRef={cell}/>
+                            )
                         }
-                        <ListingAction id={row._id}/>
+                        <ListingCellAction id={row._id}/>
                     </tr>
                 )
             }

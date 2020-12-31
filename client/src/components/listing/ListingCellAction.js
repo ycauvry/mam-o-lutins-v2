@@ -3,9 +3,10 @@ import {ListingContext} from "../../context/ListingContext";
 import {Link} from 'react-router-dom';
 import {ListingDef} from "../../utils/ListingDefinitions";
 
-const ListingAction = ({id}) => {
+const ListingCellAction = ({id}) => {
     const {listingType} = useContext(ListingContext);
     const editPath = ListingDef[listingType].editPath;
+
     return (
         <td className="action-cell">
             <Link to={editPath + id}>
@@ -15,4 +16,4 @@ const ListingAction = ({id}) => {
     )
 }
 
-export default ListingAction;
+export default ListingCellAction;

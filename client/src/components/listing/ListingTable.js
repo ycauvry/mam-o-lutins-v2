@@ -13,4 +13,4 @@ const ListingTable = () => {
     )
 }
 
-export default ListingTable;
+export default React.memo(ListingTable);
