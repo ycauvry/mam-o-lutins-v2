@@ -8,11 +8,9 @@ import FormSpinner from "./FormSpinner";
 import FieldGenerator from "./FieldGenerator";
 
 const GeneralForm = ({type}) => {
-    console.log(type)
-    const {register, handleSubmit, errors, reset} = useForm();
+    const {register, handleSubmit, errors, reset, watch, setValue} = useForm();
     const [process, setProcess] = useState(false);
     const formFields = FormDef[type].fields;
-
     const onSubmit = async data => {
         setProcess(true);
         await postObject(type, data);
@@ -22,11 +20,11 @@ const GeneralForm = ({type}) => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} id="form-general">
-            <FieldGenerator formFields={formFields} register={register} errors={errors}/>
+            <FieldGenerator formFields={formFields} register={register} errors={errors} watch={watch} setValue={setValue}/>
             <InputSubmit process={process}/>
             <FormSpinner process={process}/>
         </form>
     )
 }
 
-export default GeneralForm;
+export default React.memo(GeneralForm);
