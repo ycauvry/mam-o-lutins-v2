@@ -216,7 +216,7 @@ export const FormDef = {
                     },
                     watch: {
                         field: 'type',
-                        value: ['cdd_incomplete', "cdi_incomplete"]
+                        value: ['cdd_incomplete', 'cdi_incomplete']
                     }
                 }
             },
@@ -244,6 +244,490 @@ export const FormDef = {
                     }
                 }
             },
+            {
+                schedules: {
+                    label: 'Horaires',
+                    type: 'group',
+                    subFields: [
+                        {
+                            monday1: {
+                                label: 'Lundi',
+                                type: 'group',
+                                subFields: [
+                                    {
+                                        start: {
+                                            label: 'Début',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    },
+                                    {
+                                        end: {
+                                            label: 'Fin',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            tuesday1: {
+                                label: 'Mardi',
+                                type: 'group',
+                                subFields: [
+                                    {
+                                        start: {
+                                            label: 'Début',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    },
+                                    {
+                                        end: {
+                                            label: 'Fin',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            wednesday1: {
+                                label: 'Mercredi',
+                                type: 'group',
+                                subFields: [
+                                    {
+                                        start: {
+                                            label: 'Début',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    },
+                                    {
+                                        end: {
+                                            label: 'Fin',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            thursday1: {
+                                label: 'Jeudi',
+                                type: 'group',
+                                subFields: [
+                                    {
+                                        start: {
+                                            label: 'Début',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    },
+                                    {
+                                        end: {
+                                            label: 'Fin',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            friday1: {
+                                label: 'Vendredi',
+                                type: 'group',
+                                subFields: [
+                                    {
+                                        start: {
+                                            label: 'Début',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    },
+                                    {
+                                        end: {
+                                            label: 'Fin',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                    ]
+                }
+            },
+            {
+                schedules2: {
+                    label: 'Horaires semaine 2',
+                    type: 'group',
+                    watch: {
+                        field: 'planning',
+                        value: ['alternate_week', 'monthly']
+                    },
+                    subFields: [
+                        {
+                            monday2: {
+                                label: 'Lundi',
+                                type: 'group',
+                                subFields: [
+                                    {
+                                        start: {
+                                            label: 'Début',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    },
+                                    {
+                                        end: {
+                                            label: 'Fin',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            tuesday2: {
+                                label: 'Mardi',
+                                type: 'group',
+                                subFields: [
+                                    {
+                                        start: {
+                                            label: 'Début',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    },
+                                    {
+                                        end: {
+                                            label: 'Fin',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            wednesday2: {
+                                label: 'Mercredi',
+                                type: 'group',
+                                subFields: [
+                                    {
+                                        start: {
+                                            label: 'Début',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    },
+                                    {
+                                        end: {
+                                            label: 'Fin',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            thursday2: {
+                                label: 'Jeudi',
+                                type: 'group',
+                                subFields: [
+                                    {
+                                        start: {
+                                            label: 'Début',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    },
+                                    {
+                                        end: {
+                                            label: 'Fin',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            friday2: {
+                                label: 'Vendredi',
+                                type: 'group',
+                                subFields: [
+                                    {
+                                        start: {
+                                            label: 'Début',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    },
+                                    {
+                                        end: {
+                                            label: 'Fin',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                    ]
+                }
+            },
+            {
+                schedules3: {
+                    label: 'Horaires semaine 3',
+                    type: 'group',
+                    watch: {
+                        field: 'planning',
+                        value: ['monthly']
+                    },
+                    subFields: [
+                        {
+                            monday3: {
+                                label: 'Lundi',
+                                type: 'group',
+                                subFields: [
+                                    {
+                                        start: {
+                                            label: 'Début',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    },
+                                    {
+                                        end: {
+                                            label: 'Fin',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            tuesday3: {
+                                label: 'Mardi',
+                                type: 'group',
+                                subFields: [
+                                    {
+                                        start: {
+                                            label: 'Début',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    },
+                                    {
+                                        end: {
+                                            label: 'Fin',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            wednesday3: {
+                                label: 'Mercredi',
+                                type: 'group',
+                                subFields: [
+                                    {
+                                        start: {
+                                            label: 'Début',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    },
+                                    {
+                                        end: {
+                                            label: 'Fin',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            thursday3: {
+                                label: 'Jeudi',
+                                type: 'group',
+                                subFields: [
+                                    {
+                                        start: {
+                                            label: 'Début',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    },
+                                    {
+                                        end: {
+                                            label: 'Fin',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            friday3: {
+                                label: 'Vendredi',
+                                type: 'group',
+                                subFields: [
+                                    {
+                                        start: {
+                                            label: 'Début',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    },
+                                    {
+                                        end: {
+                                            label: 'Fin',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                    ]
+                }
+            },
+            {
+                schedules4: {
+                    label: 'Horaires semaine 4',
+                    type: 'group',
+                    watch: {
+                        field: 'planning',
+                        value: ['monthly']
+                    },
+                    subFields: [
+                        {
+                            monday4: {
+                                label: 'Lundi',
+                                type: 'group',
+                                subFields: [
+                                    {
+                                        start: {
+                                            label: 'Début',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    },
+                                    {
+                                        end: {
+                                            label: 'Fin',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            tuesday4: {
+                                label: 'Mardi',
+                                type: 'group',
+                                subFields: [
+                                    {
+                                        start: {
+                                            label: 'Début',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    },
+                                    {
+                                        end: {
+                                            label: 'Fin',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            wednesday4: {
+                                label: 'Mercredi',
+                                type: 'group',
+                                subFields: [
+                                    {
+                                        start: {
+                                            label: 'Début',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    },
+                                    {
+                                        end: {
+                                            label: 'Fin',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            thursday4: {
+                                label: 'Jeudi',
+                                type: 'group',
+                                subFields: [
+                                    {
+                                        start: {
+                                            label: 'Début',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    },
+                                    {
+                                        end: {
+                                            label: 'Fin',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            friday4: {
+                                label: 'Vendredi',
+                                type: 'group',
+                                subFields: [
+                                    {
+                                        start: {
+                                            label: 'Début',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    },
+                                    {
+                                        end: {
+                                            label: 'Fin',
+                                            type: 'time',
+                                            register: {}
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                    ]
+                }
+            }
         ]
     }
 }

@@ -19,46 +19,214 @@ const ContractSchema = new Schema({
         required: true
     },
     schedules: {
-        monday: {
-            start: {
-                type: String
+        week1: {
+            monday: {
+                start: {
+                    type: String,
+                    default: null
+                },
+                end: {
+                    type: String,
+                    default: null
+                }
             },
-            end: {
-                type: String
+            tuesday: {
+                start: {
+                    type: String,
+                    default: null
+                },
+                end: {
+                    type: String,
+                    default: null
+                }
+            },
+            wednesday: {
+                start: {
+                    type: String,
+                    default: null
+                },
+                end: {
+                    type: String,
+                    default: null
+                }
+            },
+            thursday: {
+                start: {
+                    type: String,
+                    default: null
+                },
+                end: {
+                    type: String,
+                    default: null
+                }
+            },
+            friday: {
+                start: {
+                    type: String,
+                    default: null
+                },
+                end: {
+                    type: String,
+                    default: null
+                }
             }
         },
-        tuesday: {
-            start: {
-                type: String
+        week2: {
+            monday: {
+                start: {
+                    type: String,
+                    default: null
+                },
+                end: {
+                    type: String,
+                    default: null
+                }
             },
-            end: {
-                type: String
+            tuesday: {
+                start: {
+                    type: String,
+                    default: null
+                },
+                end: {
+                    type: String,
+                    default: null
+                }
+            },
+            wednesday: {
+                start: {
+                    type: String,
+                    default: null
+                },
+                end: {
+                    type: String,
+                    default: null
+                }
+            },
+            thursday: {
+                start: {
+                    type: String,
+                    default: null
+                },
+                end: {
+                    type: String,
+                    default: null
+                }
+            },
+            friday: {
+                start: {
+                    type: String,
+                    default: null
+                },
+                end: {
+                    type: String,
+                    default: null
+                }
             }
         },
-        wednesday: {
-            start: {
-                type: String
+        week3: {
+            monday: {
+                start: {
+                    type: String,
+                    default: null
+                },
+                end: {
+                    type: String,
+                    default: null
+                }
             },
-            end: {
-                type: String
+            tuesday: {
+                start: {
+                    type: String,
+                    default: null
+                },
+                end: {
+                    type: String,
+                    default: null
+                }
+            },
+            wednesday: {
+                start: {
+                    type: String,
+                    default: null
+                },
+                end: {
+                    type: String,
+                    default: null
+                }
+            },
+            thursday: {
+                start: {
+                    type: String,
+                    default: null
+                },
+                end: {
+                    type: String,
+                    default: null
+                }
+            },
+            friday: {
+                start: {
+                    type: String,
+                    default: null
+                },
+                end: {
+                    type: String,
+                    default: null
+                }
             }
         },
-        thursday: {
-            start: {
-                type: String
+        week4: {
+            monday: {
+                start: {
+                    type: String,
+                    default: null
+                },
+                end: {
+                    type: String,
+                    default: null
+                }
             },
-            end: {
-                type: String
+            tuesday: {
+                start: {
+                    type: String,
+                    default: null
+                },
+                end: {
+                    type: String,
+                    default: null
+                }
+            },
+            wednesday: {
+                start: {
+                    type: String,
+                    default: null
+                },
+                end: {
+                    type: String,
+                    default: null
+                }
+            },
+            thursday: {
+                start: {
+                    type: String,
+                    default: null
+                },
+                end: {
+                    type: String,
+                    default: null
+                }
+            },
+            friday: {
+                start: {
+                    type: String,
+                    default: null
+                },
+                end: {
+                    type: String,
+                    default: null
+                }
             }
         },
-        friday: {
-            start: {
-                type: String
-            },
-            end: {
-                type: String
-            }
-        }
     },
     type: {
         type: String,
@@ -68,7 +236,8 @@ const ContractSchema = new Schema({
         type: String
     },
     holidays_week: {
-        type: Number
+        type: Number,
+        default: 5
     },
     status: {
         type: String,

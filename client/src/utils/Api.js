@@ -10,6 +10,7 @@ export const listObjects = async (namespace, queryParams = {}) => {
 
 export const postObject = async (namespace, body= {}) => {
     const url = new URL(`http://localhost:8000/api/${namespace}`);
+    console.log(body);
 
     return await fetch(url.href, {
         method: 'POST',

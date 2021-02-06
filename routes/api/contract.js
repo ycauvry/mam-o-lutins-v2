@@ -24,7 +24,28 @@ router.get('/:id', (req, res) => {
 // @route POST api/contract
 // @desc Create a contract
 router.post('/', (req, res) => {
-    const newContract = new Contract(req.body)
+    const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday']
+    let schedules = {};
+    const generateSchedules = (schedules, req, days, week) => {
+        for (let i = 1; i <= week; i++) {
+            schedules[`week${i}`] = {}
+            for (const day of days) {
+                schedules[`week${i}`][day] = {
+                    start: req[`${day}${i}_start`] || null,
+                    end: req[`${day}${i}_end`] || null
+                }
+            }
+        }
+    }
+    if (req.body.planning === 'weekly') {
+        generateSchedules(schedules, req.body, days, 1);
+    } else if (req.body.planning === 'alternate_week') {
+        generateSchedules(schedules, req.body, days, 2);
+    } else {
+        generateSchedules(schedules, req.body, days, 4);
+    }
+    console.log({...req.body, schedules});
+    const newContract = new Contract({...req.body, schedules})
 
     newContract.save()
         .then(contract => res.json(contract))

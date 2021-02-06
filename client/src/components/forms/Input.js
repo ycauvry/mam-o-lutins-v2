@@ -1,11 +1,10 @@
 import React from "react";
 import {useShouldDisplay} from "../../hooks/form/useShouldDisplay";
 
-const Input = ({inputData, register, errors, watch}) => {
-    const inputName = Object.keys(inputData)[0];
+const Input = ({inputData, register, errors, watch, groupName}) => {
+    const inputName = groupName ? `${groupName}_${Object.keys(inputData)[0]}` : Object.keys(inputData)[0];
     const inputInfos = Object.values(inputData)[0];
     const shouldDisplay = useShouldDisplay(inputInfos, watch);
-
     let classNames = `input input-${inputInfos.type}`;
     if (errors[inputName]) {
         classNames += " input-error"

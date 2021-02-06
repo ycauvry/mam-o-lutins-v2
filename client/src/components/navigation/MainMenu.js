@@ -1,6 +1,6 @@
 import React, {useState, useRef} from 'react';
-import {useEscape} from "../../hooks/useEscape";
-import {useClickOutside} from '../../hooks/useClickOutside'
+import {useEscape} from "../../hooks/dom/useEscape";
+import {useClickOutside} from '../../hooks/dom/useClickOutside'
 import Hamburger from "./Hamburger";
 import MenuLink from "./MenuLink";
 import {MenuDef} from "../../utils/MenuDefinitions";

@@ -22,8 +22,8 @@ router.get('/:id', (req, res) => {
 // @desc Create a child
 router.post('/', (req, res) => {
     const {
-        firstname, lastname, birthday, street_number, street, additional, zip_code, city, contactFirstname,
-        contactLastname, phone_number
+        firstname, lastname, birthday, adress_street_number, adress_street, adress_additional, adress_zip_code,
+        adress_city, contact_contactFirstname, contact_contactLastname, contact_phone_number
     } = req.body;
 
     const newChild = new Child({
@@ -31,16 +31,16 @@ router.post('/', (req, res) => {
         lastname,
         birthday,
         address: {
-            street_number,
-            street,
-            additional,
-            zip_code,
-            city
+            street_number: adress_street_number,
+            street: adress_street,
+            additional: adress_additional,
+            zip_code: adress_zip_code,
+            city:adress_city
         },
         contact: {
-            firstname: contactFirstname,
-            lastname: contactLastname,
-            phone_number
+            firstname: contact_contactFirstname,
+            lastname: contact_contactLastname,
+            phone_number: contact_phone_number
         }
     });
 

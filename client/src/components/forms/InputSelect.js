@@ -20,7 +20,7 @@ const InputSelect = ({inputData, register, errors, watch}) => {
                         name={inputName}
                         id={inputName}
                         className={classNames}>
-                    {selectOptions};
+                    {selectOptions}
                 </select>
                 {errors[inputName] && <span className="input-error-message">{errors[inputName].message}</span>}
             </div>
