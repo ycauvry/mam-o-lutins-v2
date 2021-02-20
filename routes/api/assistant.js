@@ -35,7 +35,7 @@ router.post('/', (req, res) => {
 // @route PUT api/assistant
 // @desc Update an assistant
 router.put('/:id', (req, res) => {
-    const id = req.param.id;
+    const id = req.params.id;
     const update = req.body;
     Assistant.findOneAndUpdate(id, update, {new: true})
         .then(assistant => res.json({success: true, assistant}))

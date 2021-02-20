@@ -2,7 +2,7 @@ import React from "react";
 import {useFormSelect} from "../../hooks/form/useFormSelect";
 import {useShouldDisplay} from "../../hooks/form/useShouldDisplay";
 
-const InputSelect = ({inputData, register, errors, watch}) => {
+const InputSelect = ({inputData, register, errors, watch, defaultValues}) => {
     const inputName = Object.keys(inputData)[0];
     const inputInfos = Object.values(inputData)[0];
     const selectOptions = useFormSelect(inputInfos.namespace, inputInfos.optionList, inputInfos.choices);
@@ -30,4 +30,4 @@ const InputSelect = ({inputData, register, errors, watch}) => {
     return null;
 }
 
-export default InputSelect;
+export default React.memo(InputSelect);

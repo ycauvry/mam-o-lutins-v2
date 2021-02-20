@@ -26,7 +26,7 @@ function App() {
                     </Route>
                     <Route path="/gestion-assistantes/:id">
                         <ListingProvider>
-                            <EditData/>
+                            <EditData type={'assistant'}/>
                         </ListingProvider>
                     </Route>
                     <Route exact path="/gestion-enfants">
@@ -39,7 +39,7 @@ function App() {
                     </Route>
                     <Route path="/gestion-enfants/:id">
                         <ListingProvider>
-                            <EditData/>
+                            <EditData type={'child'}/>
                         </ListingProvider>
                     </Route>
                     <Route exact path="/gestion-contrats">
@@ -52,7 +52,7 @@ function App() {
                     </Route>
                     <Route path="/gestion-contrats/:id">
                         <ListingProvider>
-                            <EditData/>
+                            <EditData type={'contract'}/>
                         </ListingProvider>
                     </Route>
                 </Switch>

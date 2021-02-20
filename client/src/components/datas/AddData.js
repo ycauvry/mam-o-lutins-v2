@@ -6,7 +6,7 @@ const AddData = ({type}) => {
     return (
         <>
             <h1 className="title add-title">{'Ajouter ' + FormDef[type].formTitle}</h1>
-            <GeneralForm type={type}/>
+            <GeneralForm type={type} formType={'addData'}/>
         </>
     )
 }

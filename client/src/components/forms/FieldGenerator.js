@@ -3,7 +3,7 @@ import InputGroup from "./InputGroup";
 import InputSelect from "./InputSelect";
 import Input from "./Input";
 
-const FieldGenerator = ({formFields, register, errors, watch, groupName}) => {
+const FieldGenerator = ({formFields, register, errors, watch, groupName, defaultValues, reset}) => {
     return (
         formFields.map((field, idx) => {
             switch (Object.values(field)[0].type) {
@@ -13,6 +13,8 @@ const FieldGenerator = ({formFields, register, errors, watch, groupName}) => {
                                        register={register}
                                        errors={errors}
                                        watch={watch}
+                                       defaultValues={defaultValues}
+                                       reset={reset}
                                        groupName={groupName}/>
                 case 'select':
                     return <InputSelect key={idx}
@@ -20,6 +22,8 @@ const FieldGenerator = ({formFields, register, errors, watch, groupName}) => {
                                         register={register}
                                         errors={errors}
                                         watch={watch}
+                                        defaultValues={defaultValues}
+                                        reset={reset}
                                         groupName={groupName}/>
                 default:
                     return <Input key={idx}
@@ -27,10 +31,12 @@ const FieldGenerator = ({formFields, register, errors, watch, groupName}) => {
                                   register={register}
                                   errors={errors}
                                   watch={watch}
+                                  defaultValues={defaultValues}
+                                  reset={reset}
                                   groupName={groupName}/>
             }
         })
     )
 }
 
-export default FieldGenerator;
+export default React.memo(FieldGenerator);

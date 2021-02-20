@@ -31,7 +31,7 @@ router.post('/', (req, res) => {
 // @route PUT api/planning
 // @desc Update a planning
 router.put('/:id', (req, res) => {
-    const id = req.param.id;
+    const id = req.params.id;
     const update = req.body;
     Planning.findOneAndUpdate(id, update, {new: true})
         .then(planning => res.json({success: true, planning}))

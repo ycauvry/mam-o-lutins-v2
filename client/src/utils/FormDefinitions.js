@@ -54,7 +54,7 @@ export const FormDef = {
                 }
             },
             {
-                adress: {
+                address: {
                     label: 'Adresse',
                     type: 'group',
                     subFields: [
@@ -103,7 +103,7 @@ export const FormDef = {
                     type: 'group',
                     subFields: [
                         {
-                            contactLastname: {
+                            lastname: {
                                 label: 'Nom',
                                 type: 'text',
                                 register: {
@@ -112,7 +112,7 @@ export const FormDef = {
                             }
                         },
                         {
-                            contactFirstname: {
+                            firstname: {
                                 label: 'Prénom',
                                 type: 'text',
                                 register: {

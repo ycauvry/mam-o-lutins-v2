@@ -6,11 +6,14 @@ import {postObject} from "../../utils/Api";
 import InputSubmit from "./InputSubmit";
 import FormSpinner from "./FormSpinner";
 import FieldGenerator from "./FieldGenerator";
+import {useFormDefaultValues} from "../../hooks/form/useFormDefaultValues";
+import {useParams} from "react-router-dom";
 
-const GeneralForm = ({type}) => {
-    const {register, handleSubmit, errors, reset, watch, setValue} = useForm();
-    const [process, setProcess] = useState(false);
+const GeneralForm = ({type, formType}) => {
     const formFields = FormDef[type].fields;
+    const defaultValues = useFormDefaultValues(formType, type, formFields, useParams().id);
+    const {register, handleSubmit, errors, reset, watch} = useForm();
+    const [process, setProcess] = useState(false);
     const onSubmit = async data => {
         setProcess(true);
         await postObject(type, data);
@@ -20,7 +23,12 @@ const GeneralForm = ({type}) => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} id="form-general">
-            <FieldGenerator formFields={formFields} register={register} errors={errors} watch={watch} setValue={setValue}/>
+            <FieldGenerator formFields={formFields}
+                            register={register}
+                            errors={errors}
+                            reset={reset}
+                            defaultValues={defaultValues}
+                            watch={watch}/>
             <InputSubmit process={process}/>
             <FormSpinner process={process}/>
         </form>

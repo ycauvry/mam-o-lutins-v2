@@ -23,5 +23,4 @@ export default class ApiFormatter {
     calcAge = (data, methodInfos) => {
         return `${moment(moment.now()).diff(moment(data[methodInfos.methodData]), 'month')} mois`;
     }
-
 }

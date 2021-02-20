@@ -1,16 +1,15 @@
+export const getObjectById = async (namespace, id, queryParams = {}) => {
+    const url = new URL(`http://localhost:8000/api/${namespace}/${id}`);
+    return await fetch(url.href).then(res => res.json());
+}
+
 export const listObjects = async (namespace, queryParams = {}) => {
     const url = new URL(`http://localhost:8000/api/${namespace}`);
-
-    if (queryParams) {
-        url.search = new URLSearchParams(queryParams);
-    }
-
     return await fetch(url.href).then(res => res.json());
 }
 
 export const postObject = async (namespace, body= {}) => {
     const url = new URL(`http://localhost:8000/api/${namespace}`);
-    console.log(body);
 
     return await fetch(url.href, {
         method: 'POST',

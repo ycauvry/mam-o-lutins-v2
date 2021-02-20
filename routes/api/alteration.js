@@ -34,7 +34,7 @@ router.post('/', (req, res) => {
 // @route PUT api/alteration
 // @desc Update an alteration
 router.put('/:id', (req, res) => {
-    const id = req.param.id;
+    const id = req.params.id;
     const update = req.body;
     Alteration.findOneAndUpdate(id, update, {new: true})
         .then(alteration => res.json({success: true, alteration}))

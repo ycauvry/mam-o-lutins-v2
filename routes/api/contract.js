@@ -55,7 +55,7 @@ router.post('/', (req, res) => {
 // @route PUT api/contract
 // @desc Update a contract
 router.put('/:id', (req, res) => {
-    const id = req.param.id;
+    const id = req.params.id;
     const update = req.body;
     Contract.findOneAndUpdate(id, update, {new: true})
         .then(contract => res.json({success: true, contract}))
