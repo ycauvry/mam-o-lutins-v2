@@ -1,0 +1,28 @@
+:root {
+    --main-color: #8833ff;
+    --main-color-dark: #7411FF;
+    --grey: #C3CAD9;
+    --grey-light: #E6E8EC;
+    --grey-medium: #667492;
+    --grey-dark: #46577A;
+}
+
+html {
+    font-size: 16px;
+}
+
+a,a:link,a:visited,a:focus,a:hover,a:active{color:inherit}
+body {
+    min-height: 100vh;
+    padding: 0 0 0 63px;
+    color: var(--grey-medium);
+}
+
+.container {
+    padding: 20px;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+}

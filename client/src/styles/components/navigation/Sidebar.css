@@ -1,0 +1,32 @@
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    border-right: 1px solid var(--grey-light);
+}
+
+#sidebar .sidebar-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+#sidebar a {
+    display: inline-block;
+    width: 100%;
+    padding: 0 20px;
+    position: relative;
+    color: var(--grey);
+    transition: color .2s;
+}
+
+#sidebar a.active {
+    color: var(--main-color);
+}
+
+#sidebar .sidebar-link {
+    margin: 20px 0;
+    font-size: 25px;
+}
